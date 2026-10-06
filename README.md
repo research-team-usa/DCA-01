@@ -48,7 +48,7 @@ See `docs/diagrams/` for DE/EN architecture images.
 ```bash
 # Phase 0 MVP - 1 Router + 2 Experts + In-Memory Blackboard
 docker-compose up --build
-python src/router/tmr_router.py --request "Write Python simulation for heat exchanger"
+python src/router/tmr_router.py --request "Write Python simulation"
 python -m pytest tests/
 ```
 
