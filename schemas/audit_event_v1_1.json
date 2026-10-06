@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AuditEvent",
+  "type": "object",
+  "required": [
+    "timestamp",
+    "dag_id",
+    "event_type",
+    "module_id"
+  ],
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dag_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "tmr_disagreement",
+        "fusion_constraint",
+        "expert_timeout",
+        "ttl_expired",
+        "lora_drift",
+        "schema_violation",
+        "security_violation"
+      ]
+    },
+    "module_id": {
+      "type": "string"
+    },
+    "model_hash": {
+      "type": "string"
+    },
+    "detail": {
+      "type": "object"
+    }
+  }
+}

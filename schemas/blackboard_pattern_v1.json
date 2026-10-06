@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BlackboardPattern",
+  "type": "object",
+  "required": [
+    "pattern_id",
+    "version",
+    "dag_id",
+    "source_module",
+    "source_model_hash",
+    "pattern_type",
+    "abstraction"
+  ],
+  "properties": {
+    "pattern_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "dag_id": {
+      "type": "string"
+    },
+    "source_module": {
+      "type": "string"
+    },
+    "source_model_hash": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ttl_ms": {
+      "type": "integer"
+    },
+    "pattern_type": {
+      "type": "string",
+      "enum": [
+        "topological",
+        "logical",
+        "geometric",
+        "temporal"
+      ]
+    },
+    "abstraction": {
+      "type": "object",
+      "required": [
+        "name",
+        "properties"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "properties": {
+          "type": "object"
+        }
+      }
+    },
+    "vector_embedding": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "access_control": {
+      "type": "object",
+      "properties": {
+        "write": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "read": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "consumers_ack": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "audit": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CodeOutput",
+  "type": "object",
+  "required": [
+    "language",
+    "code",
+    "tests_passed"
+  ],
+  "properties": {
+    "language": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "tests_passed": {
+      "type": "boolean"
+    },
+    "type_check": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "unit_tests": {
+      "type": "array"
+    }
+  }
+}

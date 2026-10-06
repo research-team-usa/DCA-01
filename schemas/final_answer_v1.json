@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FinalAnswer",
+  "type": "object",
+  "required": [
+    "dag_id",
+    "final_answer",
+    "flag",
+    "confidence_final",
+    "provenance_graph"
+  ],
+  "properties": {
+    "dag_id": {
+      "type": "string"
+    },
+    "final_answer": {
+      "type": "string"
+    },
+    "flag": {
+      "type": "string",
+      "enum": [
+        "CONVERGENT",
+        "NON_CONVERGENT",
+        "REVIEW_REQUIRED",
+        "TMR_DISAGREEMENT"
+      ]
+    },
+    "confidence_final": {
+      "type": "number"
+    },
+    "provenance_graph": {
+      "type": "object"
+    },
+    "audit_log_ref": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ExpertOutput",
+  "description": "E_i(T_i) = (y_i, c_i, t_i, model_hash, provenance)",
+  "type": "object",
+  "required": [
+    "node_id",
+    "module_id",
+    "model_hash",
+    "y_i",
+    "c_i",
+    "c_i_calibrated",
+    "t_i_ms",
+    "provenance"
+  ],
+  "properties": {
+    "node_id": {
+      "type": "string"
+    },
+    "module_id": {
+      "type": "string"
+    },
+    "model_hash": {
+      "type": "string",
+      "pattern": "^sha256:"
+    },
+    "y_i": {
+      "type": "object"
+    },
+    "c_i": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "c_i_calibrated": {
+      "type": "number"
+    },
+    "ece_score": {
+      "type": "number"
+    },
+    "t_i_ms": {
+      "type": "integer"
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "used_patterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "input_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "blackboard_reads": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

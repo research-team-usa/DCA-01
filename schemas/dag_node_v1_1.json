@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DAGNode",
+  "type": "object",
+  "required": [
+    "node_id",
+    "dag_id",
+    "domain",
+    "objective",
+    "target_hardware",
+    "compute_budget_ms",
+    "output_spec"
+  ],
+  "properties": {
+    "node_id": {
+      "type": "string"
+    },
+    "dag_id": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "thermodynamics",
+        "mathematics",
+        "code_generation",
+        "logic",
+        "language",
+        "ethics"
+      ]
+    },
+    "objective": {
+      "type": "string"
+    },
+    "input_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "target_hardware": {
+      "type": "string",
+      "enum": [
+        "hpc_h100",
+        "a6000",
+        "t4",
+        "cpu",
+        "edge_tpu"
+      ]
+    },
+    "compute_budget_ms": {
+      "type": "integer"
+    },
+    "timeout_ms": {
+      "type": "integer"
+    },
+    "retries": {
+      "type": "integer"
+    },
+    "priority": {
+      "type": "integer"
+    },
+    "output_spec": {
+      "type": "object",
+      "required": [
+        "format",
+        "schema_ref"
+      ],
+      "properties": {
+        "format": {
+          "type": "string"
+        },
+        "schema_ref": {
+          "type": "string"
+        },
+        "required_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "determinism": {
+          "type": "object",
+          "properties": {
+            "temperature": {
+              "type": "number"
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "top_p": {
+              "type": "number"
+            },
+            "top_k": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blackboard_subscriptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
