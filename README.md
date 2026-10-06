@@ -60,9 +60,8 @@ Fusion checks: delta = |c_physics - c_code|, type_check, unit_check. On fail: Co
 
 ## Dossiers
 
-- `DCA-01-COMPLETE.md` - German complete dossier
-- `DCA-01-COMPLETE_EN.md` - English complete dossier
-- `docs/DCA-01-*.pdf` - PDF versions
+- [`DCA-01-COMPLETE`](DCA-01-COMPLETE_EN.md)
+- [`docs/DCA-01-*.pdf`](docs/DCA-01-Deterministic_Cluster_Architecture.pdf)
 
 ## License
 
