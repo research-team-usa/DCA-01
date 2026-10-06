@@ -1,0 +1,77 @@
+version: '3.9'
+services:
+  redis-blackboard:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  router-a:
+    build: ./src/router
+    environment:
+      - ROUTER_ID=router_a
+      - MODEL_HASH=sha256:router_a_v1
+    depends_on:
+      - redis-blackboard
+
+  router-b:
+    build: ./src/router
+    environment:
+      - ROUTER_ID=router_b
+      - MODEL_HASH=sha256:router_b_v1
+    depends_on:
+      - redis-blackboard
+
+  router-c:
+    build: ./src/router
+    environment:
+      - ROUTER_ID=router_c
+      - MODEL_HASH=sha256:router_c_v1
+    depends_on:
+      - redis-blackboard
+
+  decomposer:
+    build: ./src/decomposer
+    depends_on:
+      - redis-blackboard
+
+  expert-physics:
+    build: ./src/experts/physics
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    environment:
+      - HARDWARE=hpc_h100
+      - TIMEOUT_MS=1200
+
+  expert-code:
+    build: ./src/experts/code
+    environment:
+      - HARDWARE=a6000
+
+  expert-language:
+    build: ./src/experts/language
+    environment:
+      - HARDWARE=cpu
+
+  fusion:
+    build: ./src/fusion
+    depends_on:
+      - expert-physics
+      - expert-code
+      - expert-language
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./configs/prometheus.yml:/etc/prometheus/prometheus.yml
+
+volumes:
+  redis_data:

@@ -1,0 +1,11 @@
+fastapi==0.110.0
+uvicorn==0.29.0
+redis==5.0.1
+pydantic==2.6.1
+jsonschema==4.21.1
+prometheus-client==0.20.0
+peft==0.10.0
+transformers==4.38.1
+torch==2.2.1
+datasets==2.18.0
+python-multipart==0.0.9
