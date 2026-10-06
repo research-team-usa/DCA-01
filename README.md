@@ -1,5 +1,7 @@
 # DCA-01 - Deterministic Cluster Architecture
 
+<img width="1920" height="1280" alt="Directory Structure_English" src="https://github.com/user-attachments/assets/929bc5b7-72a6-499b-b3ce-ec28650699e5" />
+
 **From monolithic model to deterministic AI ecosystem**
 
 > Template: Just-in-Sequence Manufacturing (Automotive) + Triple-Modular-Redundancy TMR (Avionics) + CAN-Bus / Blackboard + LRU Principle
@@ -65,3 +67,5 @@ Fusion checks: delta = |c_physics - c_code|, type_check, unit_check. On fail: Co
 ## License
 
 MIT - Open Spec for industrial implementation
+
+[German README_DE](README_DE.md)
