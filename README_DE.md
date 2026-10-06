@@ -61,7 +61,7 @@ Fusion prüft: delta = |c_physik - c_code|, type_check, unit_check. Bei Fehlschl
 ## Dossiers
 
 - [`DCA-01-COMPLETE`](DCA-01-COMPLETE.md)
-- [`docs/DCA-01-*.pdf`](DCA-01/docs/DCA-01-Deterministische_Cluster_Architektur.pdf) 
+- [`docs/DCA-01-*.pdf`](/docs/DCA-01-Deterministische_Cluster_Architektur.pdf) 
 
 ## Lizenz
 
