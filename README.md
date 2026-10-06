@@ -1,6 +1,6 @@
 # DCA-01 - Deterministic Cluster Architecture
 
-<img width="1920" height="1280" alt="Directory Structure_English" src="https://github.com/user-attachments/assets/929bc5b7-72a6-499b-b3ce-ec28650699e5" />
+<img width="1920" height="1280" alt="EN" src="https://github.com/user-attachments/assets/5b59884d-b718-4647-8bf4-aaf88812fd56" />
 
 **From monolithic model to deterministic AI ecosystem**
 
