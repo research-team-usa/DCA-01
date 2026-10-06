@@ -17,7 +17,7 @@ The DCA-01 framework is released under the **MIT License** (Open Spec for indust
 
 * **Permitted Usage:** You are free to use, study, modify, test, benchmark, and integrate this framework into commercial or private hardware/software projects under the terms of the MIT License.
 * **Attribution:** Please credit the original architect (Emanuel Schaaf) and link back to this repository when using substantial portions of the framework.
-* **Compliance:** Preserve operational functionality and deterministic reliability to strengthen the ecosystem. No warranty is provided — use at your own responsibility.
+* **Compliance:** Preserve operational functionality and deterministic reliability to strengthen the ecosystem. No warranty is provided use at your own responsibility.
 
 ### 🤝 Collaboration & Partnership Inquiries
 This technology is built for the community, but I am open to formal partnerships.
