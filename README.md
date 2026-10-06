@@ -65,6 +65,6 @@ Fusion checks: delta = |c_physics - c_code|, type_check, unit_check. On fail: Co
 
 ## License
 
-MIT - Open Spec for industrial implementation
+[MIT](LICENSE) - Open Spec for industrial implementation
 
 [German README_DE](README_DE.md)
