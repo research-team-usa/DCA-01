@@ -1,0 +1,6 @@
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: 'dca-01'
+    static_configs:
+      - targets: ['router-a:8000','expert-physics:8000','fusion:8000']
